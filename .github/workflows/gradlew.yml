@@ -25,9 +25,9 @@ jobs:
     - name: gradle cmd Action
       uses: eskatos/gradle-command-action@v1
       with:
-        wrapper-cache-enabled: false
-        dependencies-cache-enabled: false
-        configuration-cache-enabled: false
+        wrapper-cache-enabled: true
+        dependencies-cache-enabled: true
+        configuration-cache-enabled: true
         #gradle-version: 6.8.3
         gradle-version: wrapper	# The Gradle wrapper's version (default, useful for matrix builds)
         #gradle-version: current	# The current stable release
