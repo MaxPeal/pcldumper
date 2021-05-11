@@ -44,12 +44,6 @@ jobs:
         name: jar-artifact${{ matrix.node-version }}
         #path: '**/*.jar'
         path: '**/pcldumper/**'
-
-    - name: Publish to GitHub Packages
-      run: gradle publish
-      env:
-        USERNAME: ${{ github.actor }}
-        PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         
   release:
     name: Release
