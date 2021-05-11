@@ -2,10 +2,14 @@ language:
   java
 
 jdk:
-  - oraclejdk9
-
+  - oraclejdk8
 script:
-  "./gradlew"
+
+  - # do stuff with open Java 8
+# do stuff with open Java 8, see https://docs.travis-ci.com/user/languages/java/#switching-jdks-java-8-and-below-within-one-job
+script:
+  - jdk_switcher use openjdk8
+  - "./gradlew"
 
 before_script:
   - pip install --user codecov
