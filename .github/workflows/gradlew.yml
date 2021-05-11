@@ -44,7 +44,15 @@ jobs:
         name: jar-artifact${{ matrix.node-version }}
         #path: '**/*.jar'
         path: '**/pcldumper/**'
-        
+    - name: upload-artifact *-*-all.jar${{ matrix.node-version }}
+      uses: 'actions/upload-artifact@v2'
+      with:
+        name: shadowJar-artifact${{ matrix.node-version }}
+        #path: '**/*.jar'
+        #path: '**/pcldumper/**'
+        path: 'pcldumper/build/libs/*-*-all.jar'
+    - name: ls -latr ./
+      run: ls -latr ./
   release:
     name: Release
     runs-on: ubuntu-latest
